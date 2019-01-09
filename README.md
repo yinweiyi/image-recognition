@@ -1,6 +1,4 @@
-<h1 align="center"> image-recognition </h1>
-
-<p align="center"> 基于 [百度AI开放平台](http://ai.baidu.com/) 的 PHP + Laravel 图片识别组件.</p>
+基于 [百度AI开放平台](http://ai.baidu.com/) 的 PHP+Laravel 图片识别组件.
 
 
 ## 安装
@@ -29,7 +27,7 @@ BAIDU_SECRET_KEY=your SECRET_KEY
 
 ```shell
 $imagePath = 'YOUR_FILE_PATH/front.png';
-app('image-recognition')->with('idCard')->front($imagePath)
+app('image-recognition')->with('idCard')->front($imagePath);
 ```
 
 #### 示例：
@@ -49,7 +47,7 @@ app('image-recognition')->with('idCard')->front($imagePath)
 
 ```shell
 $imagePath = 'YOUR_FILE_PATH/back.png';
-app('image-recognition')->with('idCard')->back($imagePath)
+app('image-recognition')->with('idCard')->back($imagePath);
 ```
 
 #### 示例：
@@ -66,7 +64,7 @@ app('image-recognition')->with('idCard')->back($imagePath)
 
 ```shell
 $imagePath = 'YOUR_FILE_PATH/bank.png';
-app('image-recognition')->with('bankCard')->image($imagePath)
+app('image-recognition')->with('bankCard')->image($imagePath);
 ```
 
 #### 示例：
@@ -79,4 +77,48 @@ app('image-recognition')->with('bankCard')->image($imagePath)
     ]
 ```
 
+## 驾驶证识别
 
+```shell
+$imagePath = 'YOUR_FILE_PATH/drivingLicense.png';
+app('image-recognition')->with('DrivingLicense')->image($imagePath);
+```
+
+#### 示例：
+```shell
+    [
+      "license_no" => "140105199510033312"                                  //证号
+      "valid_date" => "20161104"                                            //有效期限
+      "car_type" => "C1"                                                    //准驾车型
+      "address" => "山东省太原市大店区白陵告道事处大昊社区西街3号3户"       //住址
+      "until_date" => "20221104"                                            //至
+      "name" => "张三"                                                      //姓名
+      "country" => "中国"                                                   //国籍
+      "birthday" => "19920903"                                              //出生日期
+      "sex" => "男"                                                         //性别
+      "first_receive_date" => "20151104"                                    //初次领证日期
+    ]
+```
+
+## 行驶证识别
+
+```shell
+$imagePath = 'YOUR_FILE_PATH/vehicle_license.png';
+app('image-recognition')->with('vehicleLicense')->image($imagePath);
+```
+
+#### 示例：
+```shell
+    [
+      "brand" => "奇瑞牌SQR7161A2H"                             //品牌型号
+      "issue_date" => "20140423"                                //发证日期
+      "use_type" => "非营运"                                    //使用性质
+      "engine_number" => "FF6K02921"                            //发动机号码
+      "number" => "苏EA61N8"                                    //号牌号码
+      "name" => "周颐"                                          //所有人
+      "address" => "江苏省苏州市吴江区松陵镇庞南文化新村"       //住址
+      "register_date" => "20061218"                             //注册日期
+      "identify_code" => "LVVDC11BX6D209011"                    //车辆识别代号
+      "car_type" => "小型轿车"                                  //车辆类型
+    ]
+```
