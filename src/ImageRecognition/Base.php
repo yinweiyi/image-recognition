@@ -22,7 +22,7 @@ abstract class Base
     /**
      * @var string API Key
      */
-    protected $appKey;
+    protected $apiKey;
 
     /**
      * @var string Secret Key
@@ -40,10 +40,10 @@ abstract class Base
     const GET_TOKEN_URL = 'https://aip.baidubce.com/oauth/2.0/token';
 
 
-    public function __construct($appId, $appKey, $secretKey)
+    public function __construct($appId, $apiKey, $secretKey)
     {
         $this->appId = $appId;
-        $this->appKey = $appKey;
+        $this->apiKey = $apiKey;
         $this->secretKey = $secretKey;
     }
 
@@ -123,7 +123,7 @@ abstract class Base
 
         $data = [
             'grant_type' => 'client_credentials',
-            'client_id' => $this->appKey,
+            'client_id' => $this->apiKey,
             'client_secret' => $this->secretKey,
         ];
 

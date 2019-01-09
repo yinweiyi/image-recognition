@@ -1,28 +1,38 @@
 <h1 align="center"> image-recognition </h1>
 
-<p align="center"> A image recognition SDK..</p>
+<p align="center"> 基于 [百度AI开放平台](http://ai.baidu.com/) 的 PHP 图片识别组件.</p>
 
 
-## Installing
+## 安装
 
 ```shell
 $ composer require wayee/image-recognition -vvv
 ```
+## 发布配置文件
 
-## Usage
+```shell
+ php artisan vendor:publish --provider='Wayee\ImageRecognition\ServiceProvider'
+```
 
-TODO
+## 配置
 
-## Contributing
+在使用本扩展之前，你需要去 [百度AI开放平台](http://ai.baidu.com/) 注册账号，然后创建应用，在`config/baidu.php`里面配置：
 
-You can contribute in one of three ways:
+```shell
+return [
+    'app_id' => env('BAIDU_APP_ID', ''),
+    'api_key' => env('BAIDU_API_KEY', ''),
+    'secret_key' => env('BAIDU_SECRET_KEY', '')
+];
+```
+在`.env`里面增加
+```shell
 
-1. File bug reports using the [issue tracker](https://github.com/wayee/image-recognition/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/wayee/image-recognition/issues).
-3. Contribute new features or update the wiki.
+BAIDU_APP_ID=your APP_ID
+BAIDU_API_KEY=your API_KEY
+BAIDU_SECRET_KEY=your SECRET_KEY
 
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
+```
 
-## License
 
-MIT
+

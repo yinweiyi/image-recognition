@@ -39,6 +39,6 @@ class ImageRecognition
     public function createIdCardDriver()
     {
         $config = $this->config->get('baidu');
-        return new IdCard($config['app_id'], $config['app_key'], $config['secret_key']);
+        return new IdCard($config['app_id'], $config['api_key'], $config['secret_key']);
     }
 }
