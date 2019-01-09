@@ -1,0 +1,27 @@
+{
+    "name": "wayee\/image-recognition",
+    "description": "A image recognition SDK.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wayee",
+            "email": "378772944@qq.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "predis/predis": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wayee\\ImageRecognition\\": "src"
+        }
+    },
+    "extra": {
+    "laravel": {
+        "providers": [
+            "Wayee\\ImageRecognition\\ServiceProvider"
+        ]
+    }
+}
+}
