@@ -32,7 +32,7 @@ class ImageRecognition
     }
 
     /**
-     * id Card driver
+     * 创建身份证识别
      *
      * @return IdCard
      */
@@ -40,5 +40,16 @@ class ImageRecognition
     {
         $config = $this->config->get('baidu');
         return new IdCard($config['app_id'], $config['api_key'], $config['secret_key']);
+    }
+
+    /**
+     * 创建银行卡识别
+     *
+     * @return BankCard
+     */
+    public function createBankCardDriver()
+    {
+        $config = $this->config->get('baidu');
+        return new BankCard($config['app_id'], $config['api_key'], $config['secret_key']);
     }
 }

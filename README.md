@@ -62,6 +62,21 @@ app('image-recognition')->with('idCard')->back($imagePath)
     ]
 ```
 
+## 银行卡识别
 
+```shell
+$imagePath = 'YOUR_FILE_PATH/bank.png';
+app('image-recognition')->with('bankCard')->image($imagePath)
+```
+
+#### 示例：
+```shell
+    [
+      "bank_card_number" => "4367 4211 4762 0083 682"       //银行卡卡号
+      "valid_date" => "NO VALID"                            //有效日期
+      "bank_card_type" => 1                                 //银行卡类型，0:不能识别; 1: 借记卡; 2: 信用卡
+      "bank_name" => "建设银行"                             //银行名，不能识别时为空
+    ]
+```
 
 
