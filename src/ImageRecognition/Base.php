@@ -40,6 +40,12 @@ abstract class Base
     const GET_TOKEN_URL = 'https://aip.baidubce.com/oauth/2.0/token';
 
 
+    /**
+     * Base constructor.
+     * @param $appId
+     * @param $apiKey
+     * @param $secretKey
+     */
     public function __construct($appId, $apiKey, $secretKey)
     {
         $this->appId = $appId;
@@ -126,7 +132,6 @@ abstract class Base
             'client_id' => $this->apiKey,
             'client_secret' => $this->secretKey,
         ];
-
 
         $res = $this->getData(self::GET_TOKEN_URL, $this->getPostData($data));
 
