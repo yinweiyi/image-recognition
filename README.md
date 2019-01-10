@@ -6,6 +6,7 @@
 ```shell
 $ composer require wayee/image-recognition -vvv
 ```
+
 ## 发布配置文件
 
 ```shell
@@ -21,13 +22,22 @@ BAIDU_SECRET_KEY=your SECRET_KEY
 
 ```
 
+#### 在`config/app.php`的`aliases`数组里面增加
+```shell
+
+'ImageRecognition' => \Wayee\ImageRecognition\Facades\ImageRecognition::class
+
+```
+
 ## 身份证识别
 
 #### 正面
 
 ```shell
+use ImageRecognition;
+
 $imagePath = 'YOUR_FILE_PATH/front.png';
-app('image-recognition')->with('idCard')->front($imagePath);
+ImageRecognition::with('idCard')->front($imagePath);
 ```
 
 #### 示例：
@@ -46,8 +56,10 @@ app('image-recognition')->with('idCard')->front($imagePath);
 #### 反面
 
 ```shell
+use ImageRecognition;
+
 $imagePath = 'YOUR_FILE_PATH/back.png';
-app('image-recognition')->with('idCard')->back($imagePath);
+ImageRecognition::with('idCard')->back($imagePath);
 ```
 
 #### 示例：
@@ -63,8 +75,10 @@ app('image-recognition')->with('idCard')->back($imagePath);
 ## 银行卡识别
 
 ```shell
+use ImageRecognition;
+
 $imagePath = 'YOUR_FILE_PATH/bank.png';
-app('image-recognition')->with('bankCard')->image($imagePath);
+ImageRecognition::with('bankCard')->image($imagePath);
 ```
 
 #### 示例：
@@ -80,8 +94,10 @@ app('image-recognition')->with('bankCard')->image($imagePath);
 ## 驾驶证识别
 
 ```shell
+use ImageRecognition;
+
 $imagePath = 'YOUR_FILE_PATH/drivingLicense.png';
-app('image-recognition')->with('DrivingLicense')->image($imagePath);
+ImageRecognition::with('DrivingLicense')->image($imagePath);
 ```
 
 #### 示例：
@@ -103,8 +119,10 @@ app('image-recognition')->with('DrivingLicense')->image($imagePath);
 ## 行驶证识别
 
 ```shell
+use ImageRecognition;
+
 $imagePath = 'YOUR_FILE_PATH/vehicle_license.png';
-app('image-recognition')->with('vehicleLicense')->image($imagePath);
+ImageRecognition::with('vehicleLicense')->image($imagePath);
 ```
 
 #### 示例：
